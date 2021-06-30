@@ -1,3 +1,8 @@
 const servicosDados = require('../database/servicos.json');
 
-module.exports = servicosDados;
+exports.listarTodosServicos = function () {
+    /*
+        realiza algum tipo de processamento...    
+    */
+    return servicosDados;
+}; 
