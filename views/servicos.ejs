@@ -10,7 +10,7 @@
     <h2>Serviços</h2>
     <ul>
       <% for (let servico of servicos) { %>
-          <li><%= servico.desc %> - Preço <%= temDesconto %>: R$ <%= servico.preco %></li>
+          <li><%= servico.desc %> - Preço <%= temDesconto %>: R$ <%= (servico.preco.toFixed(2)).toString().replace(".",",") %></li>
       <% } %>
     </ul>
   </body>
