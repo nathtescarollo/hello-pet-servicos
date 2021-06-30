@@ -7,8 +7,11 @@
     <title>Pet - Serviços</title>
 </head>
   <body>
-    <% for (let servico of servicos) { %>
-        <h3>O preço do serviço <%= servico.desc %> <%= temDesconto %> <%= servico.preco %></h3>
-    <% } %>
+    <h2>Serviços</h2>
+    <ul>
+      <% for (let servico of servicos) { %>
+          <li><%= servico.desc %> - Preço <%= temDesconto %>: R$ <%= servico.preco %>,00</li>
+      <% } %>
+    </ul>
   </body>
 </html>
