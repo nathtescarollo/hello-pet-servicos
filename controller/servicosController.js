@@ -1,14 +1,14 @@
-const ServicoModel = require('../model/servicosModel');
+const servicosModel = require('../model/servicosModel');
 
-const ServicoController = {
+let listaDeServicos = servicosModel.listarTodosServicos();
+
+const servicoController = {
     aplicarDesconto: function (req, res) {
         const { taxa_desconto } = req.query; // ?taxa_desconto=10
         
-        let listaDeServicos = ServicoModel.listarTodosServicos();
-
         if (taxa_desconto) {
             listaDeServicos.map(servico => {
-                servico.preco = servico.preco * ((100 - taxa_desconto)/100);
+                servico.preco *= (100 - taxa_desconto) / 100;
                 return servico;
             });
         }
@@ -16,4 +16,4 @@ const ServicoController = {
     }
 };
 
-module.exports = ServicoController;
+module.exports = servicoController;

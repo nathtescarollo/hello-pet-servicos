@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const servicosController = require('../controller/ServicoController');
+const servicosController = require('../controller/servicosController');
 
 /* GET /servicos page. */
 router.get('/', function(req, res, next) {
