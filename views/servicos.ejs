@@ -7,11 +7,19 @@
     <title>Pet - Serviços</title>
 </head>
   <body>
-    <h2>Serviços</h2>
+    <h2>Serviços (<%= temDesconto %>)</h2>
     <ul>
       <% for (let servico of servicos) { %>
-          <li><%= servico.desc %> - Preço <%= temDesconto %>: R$ <%= (servico.preco.toFixed(2)).toString().replace(".",",") %></li>
+          <li><%= servico.desc %> - Preço: R$ <%= (servico.preco.toFixed(2)).toString().replace(".",",") %></li>
       <% } %>
     </ul>
+    <h2>Adicionar Serviço</h2>
+    <form action="" method="post">
+      <label for="desc">Descrição</label>
+      <input type="text" name="desc">
+      <label for="preco">Preço</label>
+      <input type="number" step="0.01" name="preco">
+      <button type="submit">Criar</button>
+    </form>
   </body>
 </html>

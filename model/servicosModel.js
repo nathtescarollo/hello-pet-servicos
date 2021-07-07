@@ -6,3 +6,9 @@ exports.listarTodosServicos = function () {
     */
     return servicosDados;
 }; 
+
+exports.adicionarServico = function (id, desc, preco) {
+    preco = parseFloat(preco);
+    servicosDados.push( { id, desc, preco } );
+    console.log(servicosDados);
+};
