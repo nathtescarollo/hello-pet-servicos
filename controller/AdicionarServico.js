@@ -1,6 +1,6 @@
 const ServicosModel = require('../model/servicosModel');
 
-let listaDeServicos = ServicosModel.listarTodosServicos();
+const listaDeServicos = ServicosModel.listarTodosServicos();
 
 exports.adicionarServico = function (novoServico) {
     const { desc, preco } = novoServico;

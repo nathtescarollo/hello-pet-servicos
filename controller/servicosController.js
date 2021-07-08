@@ -1,11 +1,9 @@
 const ServicosModel = require('../model/servicosModel');
 
-let listaDeServicos = ServicosModel.listarTodosServicos();
+const listaDeServicos = ServicosModel.listarTodosServicos();
 
 const servicoController = {
-    aplicarDesconto: function (req, res) {
-        const { taxa_desconto } = req.query; // ?taxa_desconto=10
-        
+    aplicarDesconto: function (taxa_desconto) {        
         if (taxa_desconto) {
             return listaDeServicos.map(servico => {
                 const resultado = {
@@ -15,7 +13,6 @@ const servicoController = {
                 return resultado;
             });
         }
-        
         return listaDeServicos;
     }
 };

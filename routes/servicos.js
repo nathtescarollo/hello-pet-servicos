@@ -7,8 +7,9 @@ const adicionarServicoController = require('../controller/AdicionarServico');
 
 /* GET /servicos page */
 router.get('/', function(req, res, next) {
-    const servicos = servicosController.aplicarDesconto(req, res); 
-    const temDesconto = (req.query.taxa_desconto) != undefined ? "com desconto de " + req.query.taxa_desconto + "%" : "sem desconto";
+    const { taxa_desconto } = req.query; // ?taxa_desconto=10
+    const servicos = servicosController.aplicarDesconto(taxa_desconto); 
+    const temDesconto = taxa_desconto ? ("com desconto de " + taxa_desconto + "%") : "sem desconto";
     res.render('servicos', { servicos, temDesconto });
 });  
 
